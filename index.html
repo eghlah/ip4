@@ -5,7 +5,8 @@
   <meta charset="utf-8">
   <title>Ping-pong</title>
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/scripts.js"></script>
+  <script src="js/jquery-3.2.0.js"></script>
+
 
 
 </head>
@@ -45,11 +46,43 @@
         <strong style="float:left;">Enter your number here: </strong>
         <form style="float:left;">
 
-          <input type="text" name="userno"> <input type="submit" value="ping pong">
+          <input type="text" id="inputone" name="userno">
+
+          <button id="btn" type="submit">ping pong</button>
 
         </form>
+        <br>
+
+        <div id="result"></div>
+        <script>
+          $(document).ready(function() {
+
+            $("#btn").on("click", function() {
+              var input_no = $("#inputone").val();
 
 
+              for (int i = 0; i < input_no; i++) {
+
+                if (i % 3 == 0) {
+                  document.getElementById("result").innerHTML = "ping";
+                } else if (i % 5 == 0) {
+                  document.getElementById("result").innerHTML = "pong";
+                } else if (i % 5 == 0 && i % 3 == 0) {
+                  document.getElementById("result").innerHTML = "pingpong";
+                } else {
+                  document.getElementById("result").innerHTML = i;
+                }
+
+
+              }
+
+
+
+
+
+            })
+          })
+        </script>
       </div>
 
     </div>
