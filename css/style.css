@@ -35,6 +35,8 @@ h1 {
   height: 80%;
   background-color: #e6e6e6;
   padding-top: 10px;
+  float: left;
+  ;
 }
 
 .left-content {
@@ -56,8 +58,8 @@ h1 {
   padding-top: 30px;
   padding-left: 40px;
   float: left;
-  background-color: blue;
   box-sizing: border-box;
+  background-color: none;
 }
 
 .text_one {
