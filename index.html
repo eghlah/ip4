@@ -19,16 +19,12 @@
         for (i = 1; i <= input_no; i++) {
 
 
-          if (i % 5 == 0) {
-
-            if (i % 3 == 0) {
-              text += "<li>pingpong</li>";
-            }
-
+          if (i % 5 == 0 && i % 3 == 0) {
+            text += "<li style='color:green;'>pingpong</li>";
           } else if (i % 3 == 0) {
-            text += "<li>ping</li>";
+            text += "<li style='color:blue;'>ping</li>";
           } else if (i % 5 == 0) {
-            text += "<li>pong</li>";
+            text += "<li style='color:red;'>pong</li>";
           } else {
             text += "<li> " + i + "</li>";
           }
