@@ -5,9 +5,44 @@
   <meta charset="utf-8">
   <title>Ping-pong</title>
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/jquery-3.2.0.js"></script>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+  <script type="text/javascript">
+    $(function() {
+
+      $(document).on("click", ".btn", function(e) {
+
+        e.preventDefault();
+        var input_no = $("#inputone").val();
+        var text = "";
+        var i;
+        for (i = 1; i <= input_no; i++) {
 
 
+          if (i % 5 == 0) {
+
+            if (i % 3 == 0) {
+              text += "<li>pingpong</li>";
+            }
+
+          } else if (i % 3 == 0) {
+            text += "<li>ping</li>";
+          } else if (i % 5 == 0) {
+            text += "<li>pong</li>";
+          } else {
+            text += "<li> " + i + "</li>";
+          }
+
+
+
+
+        }
+        document.getElementById("result").innerHTML = text;
+
+      });
+
+    });
+  </script>
 
 </head>
 
@@ -48,41 +83,18 @@
 
           <input type="text" id="inputone" name="userno">
 
-          <button id="btn" type="submit">ping pong</button>
+          <button id="btn" class="btn" type="submit">ping pong</button>
 
         </form>
         <br>
+        <div style="width:100%; clear:both; "></div>
 
         <div id="result"></div>
-        <script>
-          $(document).ready(function() {
-
-            $("#btn").on("click", function() {
-              var input_no = $("#inputone").val();
-
-
-              for (int i = 0; i < input_no; i++) {
-
-                if (i % 3 == 0) {
-                  document.getElementById("result").innerHTML = "ping";
-                } else if (i % 5 == 0) {
-                  document.getElementById("result").innerHTML = "pong";
-                } else if (i % 5 == 0 && i % 3 == 0) {
-                  document.getElementById("result").innerHTML = "pingpong";
-                } else {
-                  document.getElementById("result").innerHTML = i;
-                }
-
-
-              }
 
 
 
 
 
-            })
-          })
-        </script>
       </div>
 
     </div>
@@ -93,3 +105,4 @@
 </html>
 
 </html>
+/html>
